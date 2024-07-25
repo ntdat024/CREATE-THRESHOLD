@@ -224,8 +224,8 @@ class Main ():
         pass
 
     def get_list_Door (self):
+        list_doors = []
         try:
-            list_doors = []
             select_doors = uidoc.Selection.PickElementsByRectangle(FilterDoor(), "Select Doors")
             for door in select_doors:
                 wall = door.Host
@@ -235,7 +235,6 @@ class Main ():
                     list_doors.append(door)
         except:
             pass
-        
         return list_doors
 
     def main_task(self):
