@@ -53,7 +53,6 @@ class FilterDoor(ISelectionFilter):
     def AllowReference(self, reference, position):
         return True
 
-#create floor (main method)
 class Utils:
     def __init__(self):
         pass
@@ -156,7 +155,7 @@ class Utils:
         combine_floor = Floor.Create(doc, profiles, floor_type_id, level_id)
         combine_floor.get_Parameter(BuiltInParameter.FLOOR_HEIGHTABOVELEVEL_PARAM).Set(door_height_offset/304.8)
 
-#defind wpf window
+
 class WPFWindow:
     def load_window (self, list_doors, floor_type_names):
 
@@ -181,10 +180,7 @@ class WPFWindow:
 
         return window
 
-
     def bindind_data (self):
-        
-
         self.cbb_family.ItemsSource = self.floor_type_names
         self.bt_Cancel.Click += self.Cancel_Click
         self.bt_Ok.Click += self.OK_Click
@@ -195,9 +191,6 @@ class WPFWindow:
         height_ofsset = float(self.tb_offset.Text)
         floor_type_name = self.cbb_family.SelectedItem
         checked = self.cb_combine.IsChecked
-
-        #close window
-        self.window.Close()
 
         t = Transaction(doc, "Create floors")
         t.Start()
