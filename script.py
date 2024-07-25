@@ -79,11 +79,7 @@ class Utils:
     
 
     #create floor method
-    def create_separate_floor (self, door, floor_typeName, offset):
-
-        #kethua
-        door_height_offset = offset
-        floor_type_name = floor_typeName
+    def create_separate_floor (self, door, floor_type_name, door_height_offset):
 
         #get door information
         door_type = doc.GetElement(door.GetTypeId())
